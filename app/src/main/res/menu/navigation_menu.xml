@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuInicio"
+        android:icon="@drawable/ic_home"
+        android:title="Inicio"/>
+    <item
+        android:id="@+id/menuMedidor"
+        android:icon="@drawable/ic_termo"
+        android:title="Medidor"/>
+    <item
+        android:id="@+id/menuConversor"
+        android:icon="@drawable/ic_conversor"
+        android:title="Conversor"/>
+    <item
+        android:id="@+id/menuConfiguración"
+        android:icon="@drawable/ic_settings"
+        android:title="Configuración"/>
+    <item
+        android:id="@+id/menuMapa"
+        android:icon="@drawable/ic_mapa"
+        android:title="Mapa"/>
+</menu>
