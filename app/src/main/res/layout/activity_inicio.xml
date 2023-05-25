@@ -5,6 +5,7 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/Theme.InteriorApp"
     tools:context=".Inicio">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,7 +27,7 @@
                 android:layout_height="30dp"
                 android:src="@drawable/ic_menu"
                 app:tint="@color/white" />
-            
+
             <TextView
                 android:id="@+id/textTitle"
                 android:layout_width="match_parent"
@@ -36,6 +37,10 @@
                 android:textSize="18sp"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar" />
 
         </LinearLayout>
 

@@ -70,6 +70,7 @@ public class ListadoFragment extends Fragment {
                 for (int i = 0; i < array.length(); i++) {
                     try {
                         Users user = new Users();
+                        user.setId(array.getJSONObject(i).getInt("id"));
                         user.setNombre(array.getJSONObject(i).getString("nombre"));
                         user.setApellidos(array.getJSONObject(i).getString("apellidos"));
                         user.setCiudad(array.getJSONObject(i).getString("ciudad"));

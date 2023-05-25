@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/listadoFragment"
         android:name="com.example.recyclerviewvolley.ListadoFragment"
-        android:label="fragment_listado"
-        tools:layout="@layout/fragment_listado" >
+        android:label="Inicio"
+        tools:layout="@layout/fragment_listado">
         <action
             android:id="@+id/action_listadoFragment_to_medidorFragment"
             app:destination="@id/medidorFragment" />
@@ -37,4 +37,9 @@
             android:id="@+id/action_medidorFragment_to_listadoFragment"
             app:destination="@id/listadoFragment" />
     </fragment>
+    <activity
+        android:id="@+id/resumenActiviy"
+        android:name="com.example.recyclerviewvolley.ResumenActiviy"
+        android:label="activity_resumen"
+        tools:layout="@layout/activity_resumen" />
 </navigation>
