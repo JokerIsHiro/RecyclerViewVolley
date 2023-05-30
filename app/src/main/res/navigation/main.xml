@@ -42,4 +42,9 @@
         android:name="com.example.recyclerviewvolley.ResumenActiviy"
         android:label="activity_resumen"
         tools:layout="@layout/activity_resumen" />
+    <activity
+        android:id="@+id/mapsActivity"
+        android:name="com.example.recyclerviewvolley.MapsActivity"
+        android:label="activity_maps"
+        tools:layout="@layout/activity_maps" />
 </navigation>

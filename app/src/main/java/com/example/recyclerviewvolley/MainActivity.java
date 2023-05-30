@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, Inicio.class);
                     startActivity(intent);
                 }else{
-                    Toast.makeText(MainActivity.this, response, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Los datos son incorrectos, pruebe con admin admin", Toast.LENGTH_SHORT).show();
                 }
 
             }

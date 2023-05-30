@@ -43,7 +43,6 @@ public class MedidorFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_medidor, container, false);
 
         txtNombre = (EditText)view.findViewById(R.id.txtNombre);
@@ -77,7 +76,6 @@ public class MedidorFragment extends Fragment {
                 }
             }
             private void enviar() {
-                // url to post our data
                 String url = "http://192.168.1.37/temp.php";
 
                 final String nombre = txtNombre.getText().toString().trim();
@@ -91,22 +89,15 @@ public class MedidorFragment extends Fragment {
                 }else{
                     format = 2;
                 }
-
-                // creating a new variable for our request queue
                 RequestQueue queue = Volley.newRequestQueue(view.getContext());
 
 
                 StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        //Toast.makeText(view.getContext(), "Data added to API", Toast.LENGTH_SHORT).show();
                         try {
-                            // on below line we are parsing the response
-                            // to json object to extract data from it.
                             JSONObject respObj = new JSONObject(response);
 
-                            // below are the strings which we
-                            // extract from our json object.
                             Users user = new Users(
                                     respObj.getString("nombre"),
                                     respObj.getString("apellidos"),
@@ -115,8 +106,6 @@ public class MedidorFragment extends Fragment {
                                     respObj.getString("provincia"),
                                     respObj.getInt("format")
                             );
-
-                            // on below line we are setting this string s to our text view.
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -124,32 +113,23 @@ public class MedidorFragment extends Fragment {
                 }, new com.android.volley.Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // method to handle errors.
                         Toast.makeText(view.getContext(), "Fallo al obtener respuesta = " + error, Toast.LENGTH_SHORT).show();
-                        System.out.println(error);
                     }
                 }) {
                     @Override
                     protected Map<String, String> getParams() {
-                        // below line we are creating a map for
-                        // storing our values in key and value pair.
                         Map<String, String> params = new HashMap<String, String>();
 
-                        // on below line we are passing our key
-                        // and value pair to our parameters.
                         params.put("nombre", nombre);
                         params.put("apellidos", apellidos);
                         params.put("temperatura", String.valueOf(temperatura));
                         params.put("ciudad", ciudad);
                         params.put("provincia", provincia);
                         params.put("format", String.valueOf(format));
-                        // at last we are
-                        // returning our params.
+
                         return params;
                     }
                 };
-                // below line is to make
-                // a json object request.
                 queue.add(request);
             }
         });
